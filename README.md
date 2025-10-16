@@ -1,50 +1,54 @@
-# Welcome to your Expo app 👋
+# 💡 InvenTO: Gestão de Materiais de Terapia Ocupacional
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+<div align="center">
+  <img src="assets/images/logoInvento.png" alt="Logo InvenTO" width="150"/>
+</div>
 
-## Get started
+> Aplicativo para controle e gestão de materiais para Terapeutas Ocupacionais.
 
-1. Install dependencies
+## 🎯 Sobre o Projeto
 
-   ```bash
-   npm install
-   ```
+Este projeto visa a criação e o desenvolvimento de um aplicativo móvel para o controle e gestão digital de materiais utilizados por Terapeutas Ocupacionais. O foco é proporcionar uma ferramenta eficiente para o acompanhamento e a localização rápida de todos os recursos do inventário.
 
-2. Start the app
+*Projeto desenvolvido para a matéria extensionista "Programação para Dispositivos Móveis em Android".*
 
-   ```bash
-   npx expo start
-   ```
+## 🛠️ Tecnologias Utilizadas
 
-In the output, you'll find options to open the app in a
+| Categoria     |Tecnologia                                                              | Uso Principal                         |
+|---------------|-------------------------------------------------------------------------|---------------------------------------|
+| **Framework** | [React Native (Expo)](https://reactnative.dev/)                         | Desenvolvimento Mobile Cross-Platform |
+| **Linguagem** | [JavaScript (ES6+)](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript) | Lógica da Aplicação                   |
+| **Banco de Dados** | [SQLite (Expo SQLite)](https://docs.expo.dev/versions/latest/sdk/sqlite/) | Persistência de Dados Local           |
+| **Navegação** | [React Navigation](https://reactnavigation.org/)                        | Gerenciamento de Telas e Fluxos       |
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## 🚀 Como Iniciar o Aplicativo
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+Este é um projeto [Expo](https://expo.dev/) criado com `create-expo-app`.
 
-## Get a fresh project
+### 1. Instalação
 
-When you're ready, run:
-
+Instale as dependências do projeto:
 ```bash
-npm run reset-project
+npm install
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### 2. Execução
 
-## Learn more
+Inicie o servidor de desenvolvimento:
+```bash
+npx expo start
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+Na saída do terminal, você encontrará opções para abrir o aplicativo no **Expo Go**, um ambiente para testes rápidos em dispositivos móveis (recomendado).
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## ⚙️ Scripts Disponíveis
 
-## Join the community
+### Limpar e Reiniciar o Projeto
 
-Join our community of developers creating universal apps.
+Se encontrar problemas de inicialização ou cache, você pode executar o seguinte comando para limpar o cache do Metro Bundler:
+```bash
+npx expo start --clear
+```
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+> **Nota**: O script `npm run reset-project` mencionado anteriormente parece ser de um template. O comando `npx expo start --clear` é a forma padrão do Expo para limpar o cache.
+

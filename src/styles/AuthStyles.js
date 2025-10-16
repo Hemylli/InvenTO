@@ -94,6 +94,7 @@ const styles = StyleSheet.create({
     color: colors.textSecondary,
     fontSize: 16,
   },
+  
   // Estilos específicos para SignUpScreen
   signUpTitle: {
     fontSize: 24,
