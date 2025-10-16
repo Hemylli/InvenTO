@@ -1,7 +1,7 @@
 # 💡 InvenTO: Gestão de Materiais de Terapia Ocupacional
 
 <div align="center">
-  <img src="assets/images/logoInvento.png" alt="Logo InvenTO" width="150"/>
+  <img src="assets/images/LogoInvento.png" alt="Logo InvenTO" width="150"/>
 </div>
 
 > Aplicativo para controle e gestão de materiais para Terapeutas Ocupacionais.
