@@ -1,7 +1,6 @@
 //PÁGINA INICIAL DO APP 
 import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
-import {styles} from '../../styles/AuthStyles';
 import { styles } from '../../styles/AppStyles';
 import { useNavigation } from '@react-navigation/native';
 import { SafeAreaView } from 'react-native-safe-area-context';

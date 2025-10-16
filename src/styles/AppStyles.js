@@ -33,6 +33,7 @@ const styles = StyleSheet.create({
   menuTitle: {
     fontSize: 20,
     color: colors.text,
+    fontWeight: 'bold',
     textAlign: 'center',
     marginBottom: 40,
   },
@@ -43,12 +44,12 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     width: '100%',
     padding: 20,
-    marginBottom: 15,
+    marginBottom: 30,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
+    shadowOpacity: 0.3,
     shadowRadius: 4,
-    elevation: 3,
+    elevation: 9,
   },
   menuButtonIcon: {
     width: 30,

@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, Alert, Image } from 'react-native';
+import { View, Text, TouchableOpacity, Alert, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import styles from '../../styles/AuthStyles';
-import StyledTextInput from '../../components/StyledTextInput'; 
+import StyledTextInput from '../../components/StyledTextInput';
 import { loginApi } from '../../api/authService';
+import { useAuth } from '../../context/AuthContext'; // 💡 Novo: Importa o hook
 
 const LoginScreen = () => {
   const navigation = useNavigation();
+  const { login } = useAuth(); // 💡 Novo: Obtém a função 'login' do contexto
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
   const [loading, setLoading] = useState(false);
@@ -23,7 +25,8 @@ const LoginScreen = () => {
 
     if (result.success) {
       Alert.alert('Sucesso', 'Login realizado com sucesso!');
-      // TO-DO: Implementar navegação para a tela principal
+      // 💡 Ação chave: Em vez de navegar, chamamos login(), que atualiza o estado global
+      login(); 
     } else {
       Alert.alert('Erro', result.message);
     }
@@ -45,16 +48,13 @@ const LoginScreen = () => {
       </Text>
 
       <StyledTextInput
-        style={styles.input}
         placeholder="email@dominio.com"
-        placeholderTextColor="#888" 
         keyboardType="email-address"
         autoCapitalize="none"
         value={email}
         onChangeText={setEmail}
       />
       <StyledTextInput
-        style={styles.input}
         placeholder="senha"
         secureTextEntry
         value={senha}
