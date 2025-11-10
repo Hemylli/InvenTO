@@ -32,6 +32,11 @@ export const AuthProvider = ({ children }) => {
 
   // Carrega usuário salvo ao abrir o app
   useEffect(() => {
+    const clearUserData = async () => {
+      await AsyncStorage.removeItem('userData');
+    };
+    clearUserData();
+    
     const loadUserData = async () => {
       try {
         const storedUser = await AsyncStorage.getItem('userData');

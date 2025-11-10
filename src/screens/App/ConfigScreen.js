@@ -11,7 +11,7 @@ const ConfigScreen = () => {
 
   const handleLogout = async () => {
     await logout();
-    navigation.replace('Login'); // volta pra tela de login
+    setTimeout(() => {}, 300);
   };
 
   return (
