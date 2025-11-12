@@ -24,9 +24,10 @@ const LoginScreen = () => {
     setLoading(false);
 
     if (result.success) {
-      Alert.alert('Sucesso', 'Login realizado com sucesso!');
-      // 💡 Ação chave: Em vez de navegar, chamamos login(), que atualiza o estado global
-      login(); 
+  const userData = result.user; // contém nome e email vindos do banco
+  Alert.alert('Sucesso', 'Login realizado com sucesso!');
+  login(userData); // agora salva os dados reais no contexto
+ 
     } else {
       Alert.alert('Erro', result.message);
     }

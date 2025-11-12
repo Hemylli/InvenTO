@@ -1,39 +1,63 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [user, setUser] = useState(null);
 
-  // Qualquer componente aninhado poderá chamar login ou logout.
-  const login = () => setIsAuthenticated(true);
-  const logout = () => setIsAuthenticated(false);
-
-  useEffect(() => {
-    // adicionar um token no AsyncStorage para verificar se o usuário já estava logado.
-    setTimeout(() => {
-      // Por enquanto, apenas define isLoading para false após um pequeno atraso.
-      setIsLoading(false);
-    }, 1000);
-  }, []);
-
-  // Define o estado e as funções que serão acessíveis para qualquer componente que usar este contexto.
-  const value = {
-    isAuthenticated,
-    isLoading,
-    login,
-    logout,
+  // Função para logar e armazenar o usuário
+  const login = async (userData) => {
+    try {
+      setUser(userData);
+      setIsAuthenticated(true);
+      await AsyncStorage.setItem('userData', JSON.stringify(userData));
+    } catch (error) {
+      console.log('Erro ao salvar dados do usuário:', error);
+    }
   };
 
+  // Função para sair e limpar os dados
+  const logout = async () => {
+    try {
+      await AsyncStorage.removeItem('userData');
+    } catch (error) {
+      console.log('Erro ao remover dados do usuário:', error);
+    }
+    setUser(null);
+    setIsAuthenticated(false);
+  };
+
+  // Carrega usuário salvo ao abrir o app
+  useEffect(() => {
+    const clearUserData = async () => {
+      await AsyncStorage.removeItem('userData');
+    };
+    clearUserData();
+    
+    const loadUserData = async () => {
+      try {
+        const storedUser = await AsyncStorage.getItem('userData');
+        if (storedUser) {
+          setUser(JSON.parse(storedUser));
+          setIsAuthenticated(true);
+        }
+      } catch (error) {
+        console.log('Erro ao carregar dados salvos:', error);
+      }
+      setIsLoading(false);
+    };
+
+    loadUserData();
+  }, []);
+
   return (
-    <AuthContext.Provider value={value}>
+    <AuthContext.Provider value={{ isAuthenticated, isLoading, user, login, logout }}>
       {children}
     </AuthContext.Provider>
   );
 };
 
-// Hook Personalizado
-export const useAuth = () => {
-  return useContext(AuthContext);
-};
+export const useAuth = () => useContext(AuthContext);
