@@ -4,15 +4,12 @@ import { styles } from '../../styles/AppStyles';
 import { useNavigation } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
 
-const ManageItemScreen = () =>{
-    const navigation = useNavigation();
-}
-
 const icons = {
     manage: require('../../../assets/icons/icone-editar.png')
 }
 
 export default function ManageItem(){
+    const navigation = useNavigation();
     const [busca, setBusca] = useState('');
     const [local, setLocal] = useState('');
     const [nome, setNome] = useState('');
