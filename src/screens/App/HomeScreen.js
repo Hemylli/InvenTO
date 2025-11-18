@@ -15,13 +15,6 @@ const icons = {
 const HomeScreen = () => {
   const navigation = useNavigation();
 
-  // Função para lidar com o clique nos botões
-  const handleButtonPress = (screenName) => {
-    // Navegação para as telas correspondentes
-    // Alterar após criação das próximas telas
-    console.log(`Botão '${screenName}' pressionado!`);
-  };
-
   return (
     <SafeAreaView style={styles.menuContainer}>
       <View style={styles.menuHeader}>
@@ -33,7 +26,7 @@ const HomeScreen = () => {
 
         <TouchableOpacity 
           style={styles.menuButton} 
-          onPress={() => handleButtonPress('VerInventario')}
+          onPress={() => navigation.navigate('Inventory')}
         >
           <Image source={icons.inventory} style={styles.menuButtonIcon} />
           <Text style={styles.menuButtonText}>Ver Inventário</Text>
@@ -41,7 +34,7 @@ const HomeScreen = () => {
 
         <TouchableOpacity 
           style={styles.menuButton} 
-          onPress={() => handleButtonPress('AdicionarItem')}
+          onPress={() => navigation.navigate('Add Item')}
         >
           <Image source={icons.add} style={styles.menuButtonIcon} />
           <Text style={styles.menuButtonText}>Adicionar Item</Text>
@@ -49,7 +42,7 @@ const HomeScreen = () => {
 
         <TouchableOpacity 
           style={styles.menuButton} 
-          onPress={() => handleButtonPress('GerenciarRecursos')}
+          onPress={() => navigation.navigate('Manage Item')}
         >
           <Image source={icons.manage} style={styles.menuButtonIcon} />
           <Text style={styles.menuButtonText}>Gerenciar Recursos</Text>

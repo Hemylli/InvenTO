@@ -4,7 +4,7 @@
     "slug": "snack-24d176c3-5dc8-4201-9d44-c0473dbcaebc",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/images/LogoInvento.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {

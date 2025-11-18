@@ -49,6 +49,7 @@ const LoginScreen = () => {
       </Text>
 
       <StyledTextInput
+        style={styles.input}
         placeholder="email@dominio.com"
         keyboardType="email-address"
         autoCapitalize="none"
@@ -56,6 +57,7 @@ const LoginScreen = () => {
         onChangeText={setEmail}
       />
       <StyledTextInput
+        style={styles.input}
         placeholder="senha"
         secureTextEntry
         value={senha}
