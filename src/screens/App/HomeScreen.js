@@ -57,7 +57,7 @@ const HomeScreen = () => {
 
         <TouchableOpacity 
           style={styles.menuButton} 
-          onPress={() => handleButtonPress('Configuracoes')}
+          onPress={() => navigation.navigate('Config')}
         >
           <Image source={icons.settings} style={styles.menuButtonIcon} />
           <Text style={styles.menuButtonText}>Configurações</Text>
