@@ -14,7 +14,7 @@ const AppNavigator = () => {
   return (
     <AppStack.Navigator screenOptions={{ headerShown: false }}>
       <AppStack.Screen name="Home" component={HomeScreen} />
-      <AppStack.Screen name="AddItem" component={AddItemcreen} />
+      <AppStack.Screen name="AddItem" component={AddItemScreen} />
       <AppStack.Screen name="Config" component={ConfigScreen} />
       <AppStack.Screen name="Manage Item" component={ManageItemScreen} />
       {/* Outras telas aqui (Ex: InventarioScreen) */}
