@@ -2,11 +2,10 @@
 import React, { useState, useContext } from 'react';
 import { View, Text, TextInput, Image, TouchableOpacity, Alert  } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { styles } from '../../AppStyles';
+import { styles } from '../../styles/AppStyles';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import * as ImagePicker from 'expo-image-picker'; 
-import { ScrollView } from 'react-native/types_generated/index';
 
 const AddItemScreen = () => {
     const navigation = useNavigation();
@@ -124,16 +123,24 @@ const localStyles = {
         backgroundColor: '#FFD600',
         flexDirection: 'row',
         alignItems: 'center',
-        paddingVertical: 18,
-        paddingHorizontal: 12,
-        borderRadius: 8,
+        paddingHorizontal: 20,
+        paddingTop: 60,
+        paddingBottom: 20,
         marginBottom: 20,
     },
     headerText: {
-        fontSize: 18,
+        fontSize: 22,
         fontWeight: 'bold',
         marginLeft: 10,
     },
+    previewImage: {
+        width: '100%',
+        height: '100%',
+    },
+    placeholder: {
+        justifyContent: 'center',
+        alignItems: 'center',
+    },    
     imageBox: {
         width: '100%',
         height: 150,
@@ -162,7 +169,6 @@ const localStyles = {
         borderRadius: 8,
         paddingVertical: 15,
         alignItems: 'center',
-        marginTop: 10,
     },
     buttonText: {
         color: '#000',
