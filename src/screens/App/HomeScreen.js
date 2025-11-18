@@ -41,7 +41,7 @@ const HomeScreen = () => {
 
         <TouchableOpacity 
           style={styles.menuButton} 
-          onPress={() => handleButtonPress('AdicionarItem')}
+          onPress={() => navigation.navigate('AddItem')}
         >
           <Image source={icons.add} style={styles.menuButtonIcon} />
           <Text style={styles.menuButtonText}>Adicionar Item</Text>
